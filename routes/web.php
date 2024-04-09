@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dishes.dishes-index');
 });
+Route::get('/data', function () {
+    return view('welcome');
+});
+Route::apiResource('dishes',\App\Http\Controllers\Dishes\DishesController::class);
+

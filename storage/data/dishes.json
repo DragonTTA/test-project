@@ -1,6 +1,4 @@
-<?php
-
-$json = '{
+{
   "dishes": [
     {
       "id": 1,
@@ -202,6 +200,3 @@ $json = '{
     }
   ]
 }
-';
-dd(json_decode($json,true));
-?>
