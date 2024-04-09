@@ -3,11 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Dishes\Dishes;
-use App\Repositories\Contact\ContactPushRepositoryInterface;
 use Carbon\Carbon;
-use Faker\Provider\File;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
 
 class DishesGeneratorCommand extends Command
 {

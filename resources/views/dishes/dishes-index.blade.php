@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.3.js" type="text/javascript"></script>
@@ -86,48 +86,31 @@
         <div class="col">
             <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
                 <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
-                         title="" data-content="And here's some amazing content. It's very engaging. Right?"
-                         data-original-title="2003">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
                         <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1" id="123">2003</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+                        <p class="h6 mt-3 mb-1"></p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Step1</p>
                     </div>
                 </div>
                 <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
-                         title="" data-content="And here's some amazing content. It's very engaging. Right?"
-                         data-original-title="2004">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
                         <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2004</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Launched Trello</p>
+                        <p class="h6 mt-3 mb-1"></p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Step2</p>
                     </div>
                 </div>
                 <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
-                         title="" data-content="And here's some amazing content. It's very engaging. Right?"
-                         data-original-title="2005">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
                         <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2005</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Launched Messanger</p>
+                        <p class="h6 mt-3 mb-1"></p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Step3</p>
                     </div>
                 </div>
                 <div class="timeline-step">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
-                         title="" data-content="And here's some amazing content. It's very engaging. Right?"
-                         data-original-title="2010">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
                         <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2010</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Open New Branch</p>
-                    </div>
-                </div>
-                <div class="timeline-step mb-0">
-                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top"
-                         title="" data-content="And here's some amazing content. It's very engaging. Right?"
-                         data-original-title="2020">
-                        <div class="inner-circle"></div>
-                        <p class="h6 mt-3 mb-1">2020</p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
+                        <p class="h6 mt-3 mb-1"></p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Step4</p>
                     </div>
                 </div>
             </div>
@@ -137,19 +120,40 @@
 <div class="row">
     <div class="col">
         <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-            <select class="form-control w-50" name="" id="">
-                <option value="">123</option>
-            </select>
+            <div class="timeline-step">
+                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
+                    <label for="">Please Select a meal</label>
+                    <select class="form-control" name="select_meal" id="select_meal_id">
+                        <option value="breakfast">breakfast</option>
+                        <option value="lunch">lunch</option>
+                        <option value="dinner">dinner</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+            <div class="timeline-step">
+                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
+                    <label for="">Please Enter Number of people</label>
+                    <input class="form-control" type="number" name="number_people" id="number_people_id">
+                </div>
+                <br>
+                <p class="btn btn-info">Next</p>
+            </div>
         </div>
     </div>
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('select').select2();
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').select2();
 
-    });
-    $('#123').on('click',function (){
-        console.log(131);
-    });
-</script>
+        });
+        $('#123').on('click', function () {
+            console.log(131);
+        });
+    </script>
