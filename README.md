@@ -1,61 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Fabbi PHP
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<!-- toc -->
 
-## About Laravel
+- [Fabbi PHP](#fabbi-php-assignment-1)
+  - [Requirements](#requirements)
+    - [Must](#must)
+    - [Optional](#optional)
+  - [Setup](#setup)
+  - [Description](#description)
+    - [Step 1](#step-1)
+    - [Step 2](#step-2)
+    - [Step 3](#step-3)
+    - [Step 4](#step-4)
+  - [Notes](#notes)
+  - [Submission](#submission)
+  - [FAQs](#faqs)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<!-- tocstop -->
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Must
 
-## Learning Laravel
+- Use `PHP / Laravel`
+- Use `HTML /  CSS/ JS`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Optional
+- Use vuejs or laravel blade
+- Use with [Ant Design](https://ant.design/) or [MaterialUI](https://material-ui.com/)
+- Use a type system (preferred `typescript`)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Setup
 
-## Laravel Sponsors
+Install with laravel latest version
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Description
 
-### Premium Partners
+We want to make multiple steps form. This form is aimed to help user pre-order food from restaurants, the data for restaurants and food items and is provided in the [data](./data) folder.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+Wireframes for the form are provided in the [wire frames](./wireframes) folder.
 
-## Contributing
+---
+![step 1](./wireframes/Step%201.png "step 1")
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Step 1
 
-## Code of Conduct
+- Users select the Meal Category (breakfast, lunch, or dinner).
+- They also need to input the number of people (maximum 10)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Both of these should be required fields.
 
-## Security Vulnerabilities
+---
+![step 2](./wireframes/Step%202.png "step 2")
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Step 2
 
-## License
+- Users select appropriate restaurants that provide meals based on a selection in the first step.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This is also a required field.
+
+---
+![step 3](./wireframes/Step%203.png "step 3")
+
+### Step 3
+
+- User selects dishes they want to pre-order based on the meal and restaurant they selected in the first two steps.
+
+- They first choose a dish
+- They can also add a number of servings of the dish (defaulted to 1)
+- Also users can't select the same dish twice, rather add more servings.
+
+The total number of dishes (i.e Number of dishes \* respective serving) should be greater or equal to the number of people selected in the first step and a maximum of 10 is allowed.
+
+---
+![step 4](./wireframes/Step%204.png "step 4")
+
+### Step 4
+
+On the final step, users should be able to review all their previous choices
+and click submit.
+
+## Notes
+
+- User can't proceed to the next step unless they have valid inputs on the current step.
+- if their inputs are not valid, show appropriate validation errors.
+- At any step users can go back and change their preference on any previous step.
+- Finally when the user submits the form, just log the data on the console as we don't provide any back end for now.
+- Finer details of UX is left for you to decide.
+
+## Submission
+
+- Submit a working link of your code repository (GitHub)
+- Submit a link of the deployed app (github.io/ now/ surge, etc...)
+
+## FAQs
+
+- Library Usage
+  - You are free to use any 3rd party library you want, although we might ask for justification.
