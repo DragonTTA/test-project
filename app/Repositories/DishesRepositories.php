@@ -40,8 +40,17 @@ class DishesRepositories implements DishesInterface
         if (isset($filter['availableMeals'])) {
             $query = $query->where('availableMeals', 'like', '%' . $filter['availableMeals'] . '%');
         }
+        if (isset($filter['restaurant'])) {
+            $query = $query->where('restaurant', 'like', '%' . $filter['restaurant'] . '%');
+        }
         if (isset($filter['get_all'])) {
             $query = $query->get();
+            $dishesList = [];
+            foreach ($query as $key => $value) {
+                $dishesList[$value['id']] = $value;
+            }
+        } elseif (isset($filter['group_by_restaurant'])) {
+            $query = $query->groupBy('restaurant')->get();
             $dishesList = [];
             foreach ($query as $key => $value) {
                 $dishesList[$value['id']] = $value;
@@ -49,7 +58,6 @@ class DishesRepositories implements DishesInterface
         } else {
             $dishesList = $query->paginate($filter['limit'] ?? 25);
         }
-
         return response()->json([
             'dishesList' => $dishesList,
         ]);
