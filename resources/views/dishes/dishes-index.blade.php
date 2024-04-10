@@ -139,7 +139,7 @@
                     <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
                         <div class="inner-circle" id="inner-circle-step-4"></div>
                         <p class="h6 mt-3 mb-1"></p>
-                        <p class="h6 text-muted mb-0 mb-lg-0">Step4</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Review</p>
                     </div>
                 </div>
             </div>
@@ -215,24 +215,27 @@
             <a class="btn" id="add-dishes"><i class="fas fa-plus-circle"></i></a>
         </div>
     </div>
-    <br>
 </div>
 
 <div class="row step" id="step-4" hidden>
-    <div class="col">
-        <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-            <div class="timeline-step">
-                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top">
-                    <label for="">Please Enter Number of people</label>
-                    <input class="form-control" type="number" name="number_people" id="number_people_id">
-                </div>
+    <div class="row justify-content-center" id="select_dishes_id">
+        <div class="form-group col-2">
+            <label class="form-control" for="">Meal : Lunch</label>
+            <label class="form-control" for="">No of People : 3</label>
+            <label class="form-control" for="">Restaurant : A</label>
+            <div>
+            <label class="form-control" for="">Dishes :
+                <p class="form-control"> A</p>
+                <p class="form-control"> B</p>
+                <p class="form-control"> C</p>
+            </label>
             </div>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        <div class="form-group" style="text-align:center" data-aos="fade-up">
+        <div class="form-group mt-2" style="text-align:center" data-aos="fade-up">
             <p class="btn btn-info align-items-center" id="previous_step" data-value="1">Previous</p>
             <p class="btn btn-info align-items-center" id="next_step" data-value="1">Next</p>
         </div>
