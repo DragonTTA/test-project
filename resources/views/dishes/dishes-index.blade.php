@@ -220,15 +220,15 @@
 <div class="row step" id="step-4" hidden>
     <div class="row justify-content-center" id="select_dishes_id">
         <div class="form-group col-2">
-            <label class="form-control" for="">Meal : Lunch</label>
-            <label class="form-control" for="">No of People : 3</label>
-            <label class="form-control" for="">Restaurant : A</label>
+            <label class="form-control" id="review_meal" for="">Meal : No</label>
+            <label class="form-control" id="review_number_people" for="">No of People : 0</label>
+            <label class="form-control" id="review_restaurant" for="">Restaurant : No</label>
             <div>
-            <label class="form-control" for="">Dishes :
-                <p class="form-control"> A</p>
-                <p class="form-control"> B</p>
-                <p class="form-control"> C</p>
-            </label>
+                <label class="form-control" id="review_dishes" for="">Dishes :
+                    {{--                <p class="form-control"> A</p>--}}
+                    {{--                <p class="form-control"> B</p>--}}
+                    {{--                <p class="form-control"> C</p>--}}
+                </label>
             </div>
         </div>
     </div>
@@ -289,7 +289,7 @@
                 //Xử lí trùng tên món ăn
                 $("select[name='select_dishes[]']").each(function () {
                     if ($.inArray(this.value, array_name_dishes) !== -1) {
-                        toastr.error('Món ăn'+ this.value+' đã được chọn, xin hãy chọn lại!')
+                        toastr.error('Món ăn ' + this.value + ' đã được chọn, xin hãy chọn lại!')
                         error = true
                     } else {
                         array_name_dishes.push(this.value)
@@ -305,6 +305,15 @@
                 if (count_number_dishes < number_people) {
                     toastr.error('Số lượng thức ăn phải bằng với số người đã chọn')
                     error = true
+                }
+                if (!error) {
+                    $('#review_meal').text("Meal : " + $('#select_meal_id').val())
+                    $('#review_number_people').text("No of People : " + $('#number_people_id').val())
+                    $('#review_restaurant').text("Restaurant : " + $('#select_restaurant_id').val())
+                    $('#review_dishes').text('Dishes : ')
+                    $.each(array_name_dishes, function (i, item) {
+                        $('#review_dishes').append('<p class="form-control">' + item + '</p>')
+                    })
                 }
                 url = 'dishes';
                 method = 'GET';
