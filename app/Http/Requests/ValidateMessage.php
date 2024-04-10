@@ -5,10 +5,8 @@ namespace App\Http\Requests;
 
 use App\Helpers\FlashMessages;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 trait ValidateMessage
 {
@@ -29,14 +27,6 @@ trait ValidateMessage
         } catch (\Exception $exception) {
             Log::error($exception);
         }
-
-//        $exception = new HttpResponseException(
-//            response()->json([
-//                'message' => $validator->errors()->first(),
-//                'data' => $validator->errors()
-//            ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
-//        );
-//        throw $exception;
         return self::error($validator->errors()->first());
     }
 }

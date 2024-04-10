@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers\Dishes;
 
+use App\Helpers\FlashMessages;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DisHes\DishesRequest;
 use App\Models\Dishes\Dishes;
 use App\Repositories\DishesInterface;
 use Illuminate\Http\Request;
 
 class DishesController extends Controller
 {
+    use FlashMessages;
+
     protected $dishes;
 
     public function __construct(DishesInterface $dishes)
@@ -45,9 +49,11 @@ class DishesController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DishesRequest $request)
     {
-        //
+        self::success(__('Bạn đã tạo đơn hàng thành công!'));
+        return back();
+        //CRUD sau khi vượt qua validate
     }
 
     /**

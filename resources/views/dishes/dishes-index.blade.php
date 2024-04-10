@@ -146,6 +146,8 @@
         </div>
     </div>
 </div>
+<form action="{{route('dishes.store')}}" id="form_create_dishes" method="POST">
+    @csrf
 <div id="step-1" class="step">
     <div class="row">
         <div class="col">
@@ -241,7 +243,8 @@
         </div>
     </div>
 </div>
-
+</form>
+@include('notifications')
 <script type="text/javascript">
     $(document).ready(function () {
         $('.select2').select2();
@@ -250,6 +253,7 @@
 
     //step_click
     function step_click(id, action) {
+        $('#next_step').text('Next');
         if (action == 'next') {
             var error = false
             var validate = false
@@ -303,10 +307,11 @@
                     },
                 )
                 if (count_number_dishes < number_people) {
-                    toastr.error('Số lượng thức ăn phải bằng với số người đã chọn')
+                    toastr.error('Số lượng thức ăn phải bằng hoặc lớn số người đã chọn')
                     error = true
                 }
                 if (!error) {
+                    $('#next_step').text('Submit');
                     $('#review_meal').text("Meal : " + $('#select_meal_id').val())
                     $('#review_number_people').text("No of People : " + $('#number_people_id').val())
                     $('#review_restaurant').text("Restaurant : " + $('#select_restaurant_id').val())
@@ -322,6 +327,9 @@
                     restaurant: $('#select_restaurant_id').val(),
                     get_all: true
                 }
+            }
+            if(id == 5){
+                $('#form_create_dishes').submit()
             }
             if (validate && !error) {
                 $('#next_step').attr('data-value', id);
@@ -376,7 +384,7 @@
     //Function next_step
     $('#next_step').on('click', function () {
         var step_next = parseInt($('#next_step').attr('data-value')) + 1;
-        if (step_next >= 1 && step_next <= 4) {
+        if (step_next >= 1 && step_next <= 5) {
             step_click(step_next, 'next')
         } else {
             toastr.error('Page not found!')
