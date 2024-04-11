@@ -286,10 +286,11 @@
             if (id == 4) {
                 var count_number_dishes = 0;
                 var array_name_dishes = []
+                var array_number_dishes = []
                 $("input[name='number_dishes[]']").each(function () {
                     count_number_dishes = count_number_dishes + parseInt(this.value)
+                    array_number_dishes.push(this.value)
                 });
-
                 //Xử lí trùng tên món ăn
                 $("select[name='select_dishes[]']").each(function () {
                     if ($.inArray(this.value, array_name_dishes) !== -1) {
@@ -317,7 +318,7 @@
                     $('#review_restaurant').text("Restaurant : " + $('#select_restaurant_id').val())
                     $('#review_dishes').text('Dishes : ')
                     $.each(array_name_dishes, function (i, item) {
-                        $('#review_dishes').append('<p class="form-control">' + item + '</p>')
+                        $('#review_dishes').append('<p class="form-control">' + item + ' : '+array_number_dishes[i]+'</p>')
                     })
                 }
                 url = 'dishes';
