@@ -364,7 +364,7 @@
         if (array_value.length >= check_count_max || check_count_max <= 1) {
             toastr.error('Số món có thể đặt tối đa là ' + check_count_max)
         } else {
-            $('#select_dishes_id').append('<div class="row justify-content-center" id="select_dishes_id">\n' +
+            $('#select_dishes_id').append('<div class="row justify-content-center select_add_dish" id="select_dishes_id">\n' +
                 '        <div class="form-group col-2">\n' +
                 '            <label for="">Please select a Dish</label>\n' +
                 '            <select class="form-control" name="select_dishes[]"\n' +
@@ -421,6 +421,7 @@
                 }
                 if (step == 3) {
                     var count_max_item = 0;
+                    $('.select_add_dish').remove()
                     $("#select_dishes_first_id option").each(function () {
                         $(this).remove();
                     });
